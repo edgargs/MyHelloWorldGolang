@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+    "fmt"
+    "os"
+)
+
+const World = "world"
 
 func main() {
-    fmt.Printf("Hello, world.\n")
+    var myname = os.Getenv("HELLO_GO_NAME")
+    if myname == "" {
+        myname = World
+    }
+    myname += "!"
+    fmt.Printf("Hello, %x.\n",myname)
 }
